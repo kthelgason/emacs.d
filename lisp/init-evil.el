@@ -43,9 +43,8 @@ Example: (evil-map visual \"<\" \"<gv\")"
     (evil-leader/set-key
       "pf" 'projectile-find-file
       "pp" 'projectile-switch-project))
-  (after-load 'ag
     (evil-leader/set-key
       "sp" 'ag-project
-      "sP" 'ag-project-at-point)))
+      "sP" 'ag-project-at-point))
 
 (provide 'init-evil)
