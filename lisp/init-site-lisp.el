@@ -40,10 +40,9 @@ source file under ~/.emacs.d/site-lisp/name/"
   (let ((f (locate-library (symbol-name name))))
     (and f (string-prefix-p (file-name-as-directory (site-lisp-dir-for name)) f))))
 
-(locate-library (symbol-name 'init-gn))
-(locate-library (symbol-name 'init-cmake))
-
-(require 'init-gn)
-(require 'init-cmake)
+(if (locate-library (symbol-name 'init-gn))
+  (require 'init-gn))
+(if (locate-library (symbol-name 'init-cmake))
+  (require 'init-cmake))
 
 (provide 'init-site-lisp)

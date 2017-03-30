@@ -3,4 +3,5 @@ elpa/
 recentf
 projectile-bookmarks.eld
 site-lisp/*
+!site-lisp/README
 auto-save-list/
