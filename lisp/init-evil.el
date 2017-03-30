@@ -39,12 +39,26 @@ Example: (evil-map visual \"<\" \"<gv\")"
 
   (define-key evil-visual-state-map "J" (concat ":m '>+1" (kbd "RET") "gv=gv"))
   (define-key evil-visual-state-map "K" (concat ":m '<-2" (kbd "RET") "gv=gv"))
+
+  ;; ESC quits everything!
+  (define-key evil-normal-state-map [escape] 'keyboard-quit)
+  (define-key evil-visual-state-map [escape] 'keyboard-quit)
+  (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+  (define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+  (define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+  (define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+  (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+
+  (evil-leader/set-key
+    "of" 'ff-get-other-file)
   (after-load 'projectile
     (evil-leader/set-key
       "pf" 'projectile-find-file
       "pp" 'projectile-switch-project))
     (evil-leader/set-key
       "sp" 'ag-project
-      "sP" 'ag-project-at-point))
+      "sP" 'ag-project-at-point)
+
+  (defalias 'forward-evil-word 'forward-evil-symbol))
 
 (provide 'init-evil)

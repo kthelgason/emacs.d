@@ -39,12 +39,19 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
 
+;; Backups
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 (eval-when-compile (require 'cl))
 (require 'init-utils)
 (require 'init-elpa)
 
 (require-package 'diminish)
 
+(require 'init-path)
 (require 'init-gui-frames)
 (require 'init-dired)
 (require 'init-isearch)
@@ -60,14 +67,13 @@
 (require 'init-modeline)
 
 ;; Language-specific
+(require 'init-c)
 (require 'init-elixir)
 (require 'init-web)
 
 (require-package 'markdown-mode)
 
 (require 'init-site-lisp)
-(when (site-lisp-library-loadable-p 'init-gn)
-  (require 'init-gn))
 
 (require 'server)
 (unless (server-running-p)
