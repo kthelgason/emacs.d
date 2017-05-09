@@ -14,7 +14,8 @@
    (quote
     ((evil-shift-width . 2)
      (c-c++-default-mode-for-headers
-      (quote c++-mode))))))
+      (quote c++-mode)))))
+ '(rtags-process-flags "--compiler-wrappers \"gomacc\""))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -1,7 +1,8 @@
 (require-package 'projectile)
-(add-hook 'after-init-hook 'projectile-global-mode)
+(require-package 'helm-projectile)
 
-(setq projectile-completion-system 'ivy)
+(add-hook 'after-init-hook 'projectile-global-mode)
+(helm-projectile-on)
 
 (after-load 'projectile (diminish 'projectile-mode))
 

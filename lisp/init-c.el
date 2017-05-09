@@ -1,3 +1,6 @@
+;; clang-format
+(require-package 'clang-format)
+
 ;; ObjC-mode configuration
 (add-to-list 'auto-mode-alist '("\\.mm?\\'" . objc-mode))
 (add-to-list 'magic-mode-alist

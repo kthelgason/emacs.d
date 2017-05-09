@@ -4,6 +4,7 @@
 
 (require-package 'magit)
 (require-package 'evil-magit)
+(require 'evil-magit)
 (setq-default magit-diff-refine-hunk t)
 
 (global-set-key (kbd "C-x g") 'magit-status)

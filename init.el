@@ -34,6 +34,13 @@
 (require 'init-benchmarking) ;; Measure startup time
 
 (defconst *is-a-mac* (eq system-type 'darwin))
+
+(defconst *brew-prefix*
+  (if *is-a-mac*
+      (shell-command-to-string "brew --prefix | tr -d '\n'")
+      nil))
+
+
 (setq gc-cons-threshold (* 128 1024 1024))
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -58,17 +65,21 @@
 (require 'init-grep)
 (require 'init-flycheck)
 (require 'init-smex)
-(require 'init-ivy)
+(require 'init-helm)
+;; (require 'init-ivy)
 (require 'init-fonts)
 (require 'init-editing)
 (require 'init-git)
 (require 'init-evil)
 (require 'init-projectile)
+(require 'init-paredit)
 (require 'init-modeline)
+(require 'init-rtags)
 
 ;; Language-specific
 (require 'init-c)
 (require 'init-elixir)
+(require 'init-lisp)
 (require 'init-web)
 
 (require-package 'markdown-mode)
