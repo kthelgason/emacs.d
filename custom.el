@@ -9,7 +9,12 @@
     ("9be1d34d961a40d94ef94d0d08a364c3d27201f3c98c9d38e36f10588469ea57" default)))
  '(package-selected-packages
    (quote
-    (spaceline projectile ag exec-path-from-shell web-mode flx elixir-mode evil-magit markdown-mode spaceline-config base16-themes base16-theme evil-leader magit gitconfig-mode gitignore-mode git-blamed whitespace-cleanup-mode highlight-escape-sequences undo-tree rainbow-delimiters nlinum unfill default-text-scale ivy smex flycheck anzu diff-hl dired-sort dired+ fullframe disable-mouse diminish))))
+    (spaceline projectile ag exec-path-from-shell web-mode flx elixir-mode evil-magit markdown-mode spaceline-config base16-themes base16-theme evil-leader magit gitconfig-mode gitignore-mode git-blamed whitespace-cleanup-mode highlight-escape-sequences undo-tree rainbow-delimiters nlinum unfill default-text-scale ivy smex flycheck anzu diff-hl dired-sort dired+ fullframe disable-mouse diminish)))
+ '(safe-local-variable-values
+   (quote
+    ((evil-shift-width . 2)
+     (c-c++-default-mode-for-headers
+      (quote c++-mode))))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
