@@ -13,6 +13,8 @@ This is helpful for writeroom-mode, in particular."
 (add-hook 'visual-fill-column-mode-hook
           'sanityinc/maybe-adjust-visual-fill-column)
 
-(set-face-attribute 'default nil :font "Source Code Pro:h16" :height 140)
+;; Use a heigher font-width for retina screens.
+(defvar font-size (if *is-a-mac* 140 100))
+(set-face-attribute 'default nil :font "Source Code Pro:h16" :height font-size)
 
 (provide 'init-fonts)
