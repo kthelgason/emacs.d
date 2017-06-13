@@ -78,6 +78,7 @@
 
 ;; Language-specific
 (require 'init-c)
+(require 'init-clojure)
 (require 'init-elixir)
 (require 'init-lisp)
 (require 'init-web)

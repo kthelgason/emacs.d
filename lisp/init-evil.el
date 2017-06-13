@@ -62,14 +62,12 @@ Example: (evil-map visual \"<\" \"<gv\")"
   (key-chord-define evil-insert-state-map  "jj" 'evil-normal-state)
 
   (evil-leader/set-key
-    "of" 'ff-get-other-file)
-
-  (evil-leader/set-key
     "cc" 'evilnc-comment-or-uncomment-lines
     "cr" 'comment-or-uncomment-region
     "cv" 'evilnc-toggle-invert-comment-line-by-line)
   (after-load 'projectile
     (evil-leader/set-key
+      "of" 'projectile-find-other-file
       "pf" 'projectile-find-file
       "pp" 'projectile-switch-project))
   (evil-leader/set-key
