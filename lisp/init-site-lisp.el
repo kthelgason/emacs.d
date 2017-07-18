@@ -44,5 +44,7 @@ source file under ~/.emacs.d/site-lisp/name/"
   (require 'init-gn))
 (if (locate-library (symbol-name 'init-cmake))
   (require 'init-cmake))
+(if (locate-library (symbol-name 'init-xcode))
+  (require 'init-xcode))
 
 (provide 'init-site-lisp)
