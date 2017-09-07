@@ -15,6 +15,17 @@
   (dolist (pattern patterns)
     (add-to-list 'auto-mode-alist (cons pattern mode))))
 
+;; os.path.join equivalent
+(defun join-path (root &rest dirs)
+  "Joins a series of directories together, like Python's os.path.join,
+  (dotemacs-joindirs \"/tmp\" \"a\" \"b\" \"c\") => /tmp/a/b/c"
+
+  (if (not dirs)
+      root
+    (apply 'join-path
+           (expand-file-name (car dirs) root)
+           (cdr dirs))))
+
 
 ;;----------------------------------------------------------------------------
 ;; String utilities missing from core emacs
